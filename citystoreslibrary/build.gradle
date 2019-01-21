@@ -49,6 +49,9 @@ dependencies {
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
     implementation "com.squareup.okhttp3:okhttp:$okhttpVersion"
 
+    // Timber
+    implementation "com.jakewharton.timber:timber:$timberVersion"
+
 }
 repositories {
     mavenCentral()
