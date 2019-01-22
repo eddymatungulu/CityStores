@@ -6,5 +6,5 @@ import retrofit2.http.GET
 
 interface ApiService{
     @GET
-    fun fetchRemoteData():LiveData<ApiResponse<City>>
+    fun fetchRemoteData():LiveData<ApiResponse<List<City>>>
 }
