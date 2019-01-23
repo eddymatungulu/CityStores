@@ -15,9 +15,9 @@ import android.arch.persistence.room.PrimaryKey
 )))
 data class Mall(
         @PrimaryKey
-        val id: Int,
-        val name: String,
-        val cityId:Int,
+        var id: Int = 0,
+        var name: String = "",
+        var cityId:Int = 0,
 
         @Ignore
         var shops: List<Shop> = listOf())

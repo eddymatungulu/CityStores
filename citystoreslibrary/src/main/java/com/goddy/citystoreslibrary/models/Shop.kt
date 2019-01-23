@@ -14,7 +14,7 @@ import android.arch.persistence.room.PrimaryKey
 )))
 data class Shop(
         @PrimaryKey
-        val id: Int,
-        val mallId:Int,
-        val name: String
+        var id: Int = 0,
+        var mallId:Int = 0,
+        var name: String = ""
 )

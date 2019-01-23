@@ -7,7 +7,7 @@ import android.arch.persistence.room.PrimaryKey
 @Entity
 data class City(
         @PrimaryKey
-        val id: Int,
-        val name: String,
+        var id: Int = 0,
+        var  name: String = "",
         @Ignore
         var malls: List<Mall> = listOf())
