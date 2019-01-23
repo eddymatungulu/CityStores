@@ -3,6 +3,7 @@ package com.goddy.citystoreslibrary.models
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.ForeignKey
 import android.arch.persistence.room.ForeignKey.CASCADE
+import android.arch.persistence.room.Ignore
 import android.arch.persistence.room.PrimaryKey
 
 @Entity(foreignKeys = arrayOf(ForeignKey(
@@ -17,4 +18,6 @@ data class Mall(
         val id: Int,
         val name: String,
         val cityId:Int,
+
+        @Ignore
         var shops: List<Shop> = listOf())
