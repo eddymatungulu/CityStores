@@ -5,6 +5,6 @@ import com.goddy.citystoreslibrary.models.City
 import retrofit2.http.GET
 
 interface ApiService{
-    @GET
+    @GET("/")
     fun fetchRemoteData():LiveData<ApiResponse<List<City>>>
 }
