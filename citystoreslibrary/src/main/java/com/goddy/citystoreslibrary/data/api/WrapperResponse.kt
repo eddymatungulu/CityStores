@@ -5,5 +5,5 @@ import com.google.gson.annotations.SerializedName
 
 data class WrapperResponse(
         @SerializedName("cities")
-        val items: ApiResponse<List<City>>
+        val cities: List<City>
 )
