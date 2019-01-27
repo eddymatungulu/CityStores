@@ -7,6 +7,7 @@ import android.arch.persistence.room.Ignore
 import android.arch.persistence.room.PrimaryKey
 import android.os.Parcel
 import android.os.Parcelable
+import com.google.gson.annotations.SerializedName
 
 @Entity(foreignKeys = arrayOf(ForeignKey(
         entity = City::class,
@@ -22,6 +23,7 @@ data class Mall(
         var cityId:Int = 0,
 
         @Ignore
+        @SerializedName("shops")
         var shops: List<Shop> = listOf()) : Parcelable {
         constructor(parcel: Parcel) : this(
                 parcel.readInt(),
