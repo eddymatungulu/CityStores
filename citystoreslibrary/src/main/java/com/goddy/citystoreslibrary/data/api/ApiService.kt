@@ -1,6 +1,5 @@
 package com.goddy.citystoreslibrary.data.api
 
-import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.http.GET
 
