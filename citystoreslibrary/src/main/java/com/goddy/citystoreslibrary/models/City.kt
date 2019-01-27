@@ -12,7 +12,6 @@ data class City(
         @PrimaryKey
         var id: Int = 0,
         var  name: String = "",
-        @Ignore
         @SerializedName("malls")
         var malls: List<Mall> = listOf()) : Parcelable {
         constructor(parcel: Parcel) : this(
