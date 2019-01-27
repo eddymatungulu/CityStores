@@ -5,6 +5,8 @@ import android.arch.persistence.room.ForeignKey
 import android.arch.persistence.room.ForeignKey.CASCADE
 import android.arch.persistence.room.Ignore
 import android.arch.persistence.room.PrimaryKey
+import android.os.Parcel
+import android.os.Parcelable
 
 @Entity(foreignKeys = arrayOf(ForeignKey(
         entity = City::class,
@@ -20,4 +22,30 @@ data class Mall(
         var cityId:Int = 0,
 
         @Ignore
-        var shops: List<Shop> = listOf())
+        var shops: List<Shop> = listOf()) : Parcelable {
+        constructor(parcel: Parcel) : this(
+                parcel.readInt(),
+                parcel.readString(),
+                parcel.readInt(),
+                TODO("shops")) {}
+
+        override fun writeToParcel(parcel: Parcel, flags: Int) {
+                parcel.writeInt(id)
+                parcel.writeString(name)
+                parcel.writeInt(cityId)
+        }
+
+        override fun describeContents(): Int {
+                return 0
+        }
+
+        companion object CREATOR : Parcelable.Creator<Mall> {
+                override fun createFromParcel(parcel: Parcel): Mall {
+                        return Mall(parcel)
+                }
+
+                override fun newArray(size: Int): Array<Mall?> {
+                        return arrayOfNulls(size)
+                }
+        }
+}
