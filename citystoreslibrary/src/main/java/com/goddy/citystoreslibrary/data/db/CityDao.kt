@@ -20,11 +20,17 @@ interface CityDao{
     @Query("SELECT * FROM city WHERE id = :id ")
     fun getCity(id:Int):LiveData<City>
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertMall(mall:Mall)
+
     @Query("SELECT * FROM mall WHERE cityId = :cityId ")
     fun fetchMalls(cityId:Int):LiveData<List<Mall>>
 
     @Query("SELECT * FROM mall WHERE id = :id ")
     fun getMall(id:Int):LiveData<Mall>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertShop(shop:Shop)
 
     @Query("SELECT * FROM shop WHERE mallId = :mallId ")
     fun fetchShops(mallId:Int):LiveData<List<Shop>>
