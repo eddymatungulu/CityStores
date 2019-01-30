@@ -1,6 +1,6 @@
 # City Stores Library
 
-Just a simple android library example for demo 
+Just a simple android library example for demo Edit Test
 
 How to
 To get a Git project into your build:
